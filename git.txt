@@ -1,0 +1,31 @@
+git config --global user.name ""
+git config --global user.email ""
+版本 repository
+git init 创建一个版本库
+首先需要有分支 有分支才可以提交
+git add <file>   新增文件(缓存区)
+git commit -m "" 提交文件(分支)
+git status		 查看状态
+git diff         查看修改  git diff HEAD -- <file> 查看file与当前版本区别
+git log          查看历史修改记录  --pretty=oneline 合并为一行
+git reset --hard HEAD^  回退至上一个版本  n个版本为 HEAD~N  也可以使用具体版本号
+git reflog       查看历史操作记录
+git restore <file>  还原工作区
+git reset HEAD <file>  把提交到缓存区的文件回退到工作区
+git restore -- <file>  把工作区同步到缓存区
+git restore --staged <file>  把缓存区保存的退出到工作区
+touch <file>     创建新文件
+rm <file>        删除文件
+git rm <file>    删除文件
+ssh-keygen -t rsa -C "youremail@example.com"   创建公钥
+git remote add origin git@github.com:nanami-yu/bcms.git   同步项目
+ssh -T git@github.com   测试连接
+git push -u origin master  首次提交到git
+git push origin master  提交到git
+git clone git@github.com:michaelliao/gitskills.git   克隆项目到本地
+git branch     查看当前分支
+git branch dev 创建dev分支  git switch -c dev
+git checkout dev  选择分支  git switch master
+git merge dev   合并分支 --no-ff  不使用快速合并
+git branch -d dev  删除分支
+git log --graph   查看文件合并历史
