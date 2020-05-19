@@ -6,14 +6,39 @@ server:
     min-spare-threads: 30
   servlet:
     context-path: /
-  # 配置数据源
+
+#spring
+spring:
+  #应用名称
+  application:
+    name: yu
+  #数据源配置
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    # 使用druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/yu?characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=true
-    username: root
-    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      url: jdbc:mysql://localhost:3306/yu?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=UTC
+      username: root
+      password: 123456
+  #redis
+  redis:
+    #服务器地址
+    host: 127.0.0.1
+    port: 6379
+    password:
+    pool:
+      #最大连接数量  使用负数无限制
+      max-active: 100
+      #最大阻塞时间  使用负数无限制
+      max-wait: -1
+      #最大空闲连接
+      max-idle: 500
+      #最小空闲连接
+      min-idle: 0
+      #连接超时时间(毫秒)
+      timeout: 1000
+    # Redis数据库索引（默认为0）
+    database: 0
 
 #mybatis-plus相关配置
 mybatis-plus:

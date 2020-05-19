@@ -1,8 +1,3 @@
 spring:
   profiles:
     active: dev
-
-#设置主项目包下日志为debug
-logging:
-  level:
-    com.nanami: debug
